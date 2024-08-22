@@ -1,0 +1,16 @@
+.bg-button{
+    background-color: #343434;
+    width: 35rem;
+}
+.bg-bg{
+    background-color: #000000;
+}
+.text-col{
+    color: #ffffff;
+}
+.style-card{
+    background-color: #121212;
+    border: solid 1px #c3c3c3;
+    width: 100%;
+    height: auto;
+}
