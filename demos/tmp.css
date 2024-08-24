@@ -2,6 +2,12 @@
     background-color: #343434;
     width: 35rem;
 }
+.style-navbar{
+    background-color: #343434;
+    width: 100%;
+    border: solid 3px #808080;
+    height: 3.5rem;
+}
 .bg-bg{
     background-color: #000000;
 }
@@ -11,6 +17,7 @@
 .style-card{
     background-color: #121212;
     border: solid 1px #c3c3c3;
-    width: 100%;
+    width: 75%;
     height: auto;
+    margin-bottom: 2rem;
 }
