@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('scroll', function() {
+            document.body.classList.remove('hide-scrollbar');
+            clearTimeout(window.scrollTimeout);
+            window.scrollTimeout = setTimeout(function() {
+                document.body.classList.add('hide-scrollbar');
+            }, 1000); // Adjust the timeout as needed
+        });
+    </script>
+</head>
+<body class="hide-scrollbar">
+    <div style="height: 2000px;">Scroll to see the effect</div>
+</body>
+</html>

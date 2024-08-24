@@ -39,3 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize the tabs
     initializeTabs(tabsContainer);
 });
+document.addEventListener('scroll', function () {
+    document.body.classList.remove('hide-scrollbar');
+    clearTimeout(window.scrollTimeout);
+    window.scrollTimeout = setTimeout(function () {
+        document.body.classList.add('hide-scrollbar');
+    }, 1000); // Adjust the timeout as needed
+});

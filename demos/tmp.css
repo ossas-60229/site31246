@@ -1,23 +1,65 @@
-.bg-button{
+.bg-button {
     background-color: #343434;
+    color: #ffffff;
     width: 35rem;
 }
-.style-navbar{
+
+.style-navbar {
     background-color: #343434;
     width: 100%;
     border: solid 3px #808080;
     height: 3.5rem;
 }
-.bg-bg{
+
+.bg-bg {
     background-color: #000000;
 }
-.text-col{
+
+.text-col {
     color: #ffffff;
 }
-.style-card{
+
+.style-card {
     background-color: #121212;
     border: solid 1px #c3c3c3;
     width: 75%;
     height: auto;
     margin-bottom: 2rem;
+}
+/* Custom scrollbar styles */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: thin;
+}
+.nav-link.active {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+body::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+body{
+    scrollbar-gutter: stable;
+}
+
+body::-webkit-scrollbar-track {
+    background: #343434; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
+body {
+    overflow-y: auto;
+    overflow: auto;
+    scrollbar-gutter: stable !important;
+    scrollbar-width: auto !important;
 }
