@@ -46,3 +46,13 @@ document.addEventListener('scroll', function () {
         document.body.classList.add('hide-scrollbar');
     }, 1000); // Adjust the timeout as needed
 });
+window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    console.log(window.scrollY);
+    if (window.scrollY > 300) { // 你可以調整這個數值
+        navbar.classList.add('visible');
+        console.log('visible');
+    } else {
+        navbar.classList.remove('visible');
+    }
+});

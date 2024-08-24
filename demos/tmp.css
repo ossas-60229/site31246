@@ -1,3 +1,8 @@
+html, body {
+    min-height: 100%;
+}
+
+
 .bg-button {
     background-color: #343434;
     color: #ffffff;
@@ -7,9 +12,22 @@
 .style-navbar {
     background-color: #343434;
     width: 100%;
-    border: solid 3px #808080;
+    border-bottom: solid 3px #808080;
     height: 3.5rem;
 }
+.navbar {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+.navbar.visible {
+    display: block;
+    opacity: 1;
+    z-index: 1000;
+}
+
 
 .bg-bg {
     background-color: #000000;
@@ -29,7 +47,6 @@
 /* Custom scrollbar styles */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
-    scrollbar-width: thin;
 }
 .nav-link.active {
     background-color: transparent !important;
@@ -37,15 +54,13 @@
 }
 
 body::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 9px; /* Width of the scrollbar */
 }
-body{
-    scrollbar-gutter: stable;
-}
-
 body::-webkit-scrollbar-track {
-    background: #343434; /* Background of the scrollbar track */
+    background: #000000; /* Background of the scrollbar track */
     border-radius: 10px; /* Rounded corners for the track */
+    z-index: 999;
+
 }
 
 body::-webkit-scrollbar-thumb {
@@ -59,7 +74,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 body {
     overflow-y: auto;
-    overflow: auto;
-    scrollbar-gutter: stable !important;
+    overflow: auto !important;
     scrollbar-width: auto !important;
+    scrollbar-gutter: stable !important;
 }
