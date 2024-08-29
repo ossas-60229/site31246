@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     min-height: 100%;
 }
 
@@ -9,12 +10,36 @@ html, body {
     width: 35rem;
 }
 
+.nav-link2 {
+    background-color: transparent;
+}
+
+.nav-link.active {
+    background-color: transparent !important;
+    color: inherit !important;
+    box-shadow: inset 1px 3px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    text-shadow: 0px 0px 10px #ffffff;
+}
+.nav-link:hover {
+    border: none;
+    color: #ffffff;
+}
+
+.nav-link:not(:focus):not(:hover) {
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+/* good shit */
 .style-navbar {
     background-color: #343434;
     width: 100%;
     border-bottom: solid 3px #808080;
     height: 3.5rem;
 }
+
 .navbar {
     /* display: none; */
     visibility: hidden;
@@ -22,6 +47,7 @@ html, body {
     transition: opacity 0.5s ease-in-out;
     z-index: 1000;
 }
+
 .navbar.visible {
     display: block;
     opacity: 1;
@@ -40,36 +66,40 @@ html, body {
 .style-card {
     background-color: #121212;
     border: solid 1px #c3c3c3;
-    width: 75%;
+    width: 30rem;
     height: auto;
     margin-bottom: 2rem;
 }
+
 /* Custom scrollbar styles */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
-.nav-link.active {
-    background-color: transparent !important;
-    color: inherit !important;
-}
 
 body::-webkit-scrollbar {
-    width: 9px; /* Width of the scrollbar */
+    width: 9px;
+    /* Width of the scrollbar */
 }
+
 body::-webkit-scrollbar-track {
-    background: #000000; /* Background of the scrollbar track */
-    border-radius: 10px; /* Rounded corners for the track */
+    background: #000000;
+    /* Background of the scrollbar track */
+    border-radius: 10px;
+    /* Rounded corners for the track */
     z-index: 999;
 
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
+    background: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the scrollbar thumb when hovered */
+    background: #555;
+    /* Color of the scrollbar thumb when hovered */
 }
 
 body {
@@ -77,4 +107,8 @@ body {
     overflow: auto !important;
     scrollbar-width: auto !important;
     scrollbar-gutter: stable !important;
+}
+
+.card-text.intro {
+    text-align: center;
 }
