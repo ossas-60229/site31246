@@ -2,7 +2,9 @@ html,
 body {
     min-height: 100%;
 }
-
+.overview{
+    width: 20rem;
+}
 
 .bg-button {
     background-color: #343434;
@@ -34,12 +36,50 @@ body {
     text-decoration: none !important;
 }
 
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-link.underline::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s;
+}
+
+.nav-link.underline:hover::after {
+    width: 100%;
+}
+
 /* good shit */
 .style-navbar {
     background-color: #343434;
     width: 100%;
     border-bottom: solid 3px #808080;
-    height: 3.8rem;
+    height: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links li {
+    margin-right: 20px;
 }
 
 .navbar {
@@ -56,13 +96,13 @@ body {
 
 .navbar.visible {
     display: block;
-    opacity: 0.93;
+    opacity: 0.95;
     z-index: 1000;
 }
 
 .backdrop-blur {
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .bg-bg {

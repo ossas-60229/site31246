@@ -3,69 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar with Backdrop Filter Blur</title>
+  <title>Navbar Example</title>
   <style>
     body {
-      background-image: url('https://picsum.photos/2000/1000');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
     }
 
     .navbar {
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      position: fixed; /* Add this line */
+      top: 0; /* Add this line */
+      width: 100%; /* Add this line */
+      z-index: 1; /* Add this line */
     }
 
-    .navbar-brand {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      text-decoration: none;
+    .logo {
+      margin-right: 20px;
     }
 
-    .navbar-nav {
+    .nav-links {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
+      justify-content: center;
+      flex: 1;
     }
 
-    .navbar-nav li {
+    .nav-links li {
       margin-right: 20px;
     }
 
-    .navbar-nav a {
-      color: #333;
+    .nav-links a {
+      color: #fff;
       text-decoration: none;
-      transition: color 0.2s ease;
     }
 
-    .navbar-nav a:hover {
-      color: #666;
+    .nav-links a:hover {
+      color: #ccc;
+    }
+
+    .content {
+      padding: 20px;
+      margin-top: 80px; /* Add this line */
     }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <ul class="navbar-nav">
+    <div class="logo">
+      <a href="#">Logo</a>
+    </div>
+    <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
-  <div style="height: 100vh;"></div>
+  <div class="content">
+    <h1>Welcome to our website!</h1>
+    <p>This is a sample website with a navbar that has centered items and a logo on the left.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  </div>
 </body>
 </html>
