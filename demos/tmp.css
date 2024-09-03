@@ -2,7 +2,8 @@ html,
 body {
     min-height: 100%;
 }
-.overview{
+
+.overview {
     width: 20rem;
 }
 
@@ -162,4 +163,22 @@ body {
 
 .card-text.intro {
     text-align: center;
+}
+.outer-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    /* 設置外部卡片的高度 */
+}
+
+.inner-card {
+    border-left: none;
+    border-right: none;
+    margin-left: 4.8px;
+    margin-right: 4.8px;
+    width: 27rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
 }
