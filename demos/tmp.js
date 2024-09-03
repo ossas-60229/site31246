@@ -58,7 +58,7 @@ window.addEventListener('scroll', function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
     var cardTexts = document.querySelectorAll(".card-text.overview");
-    var maxLength = 50; // 設定最大字數
+    var maxLength = 47; // 設定最大字數
 
     cardTexts.forEach(function (cardText) {
         var originalText = cardText.innerText;

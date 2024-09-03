@@ -117,7 +117,9 @@ body {
 .style-card {
     background-color: #121212;
     border: solid 1px #c3c3c3;
-    width: 30rem;
+    /* width: 30rem; */
+    width: 50rem;
+    /* width: 793px; */
     height: auto;
     margin-bottom: 2rem;
     z-index: 500;
