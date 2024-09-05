@@ -117,8 +117,8 @@ body {
 .style-card {
     background-color: #121212;
     border: solid 1px #c3c3c3;
-    /* width: 30rem; */
-    width: 50rem;
+    width: 45rem;
+    /* width: 21cm; */
     /* width: 793px; */
     height: auto;
     margin-bottom: 2rem;
@@ -177,10 +177,17 @@ body {
 .inner-card {
     border-left: none;
     border-right: none;
-    margin-left: 4.8px;
-    margin-right: 4.8px;
-    width: 27rem;
+    /* margin-left: 4.8px;
+    margin-right: 4.8px; */
+    width: 39.5rem;
+    /* width: 95%; */
+    /* width: 45vw; */
     justify-content: center;
     align-items: center;
     border-radius: 0%;
+}
+@media (max-width: 39.5rem) {
+    .inner-card{
+        width: 30rem;
+    }
 }
