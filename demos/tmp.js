@@ -49,7 +49,7 @@ document.addEventListener('scroll', function () {
 window.addEventListener('scroll', function () {
     var navbar = document.getElementById('navbar');
     console.log(window.scrollY);
-    if (window.scrollY > 0) { // 你可以調整這個數值
+    if (window.scrollY > 300) { // 你可以調整這個數值
         navbar.classList.add('visible');
         console.log('visible');
     } else {
@@ -58,14 +58,19 @@ window.addEventListener('scroll', function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
     var cardTexts = document.querySelectorAll(".card-text.overview");
-    var maxLength = 70; // 設定最大字數
+    var maxLength = 90; // 設定最大字數
+    var minLength = 70;
 
     cardTexts.forEach(function (cardText) {
         var originalText = cardText.innerText;
         if (originalText.length > maxLength) {
+            // for (var i = minLength; i < maxLength; ++i) {
+            //     var truncatedText = originalText.substring(0, maxLength) + "……";
+            //     cardText.innerText = truncatedText;
+            // }
             var truncatedText = originalText.substring(0, maxLength) + "……";
             cardText.innerText = truncatedText;
-              cardText.setAttribute("title", originalText); // 將完整文字設置為標題屬性，方便用戶查看
+            // cardText.setAttribute("title", originalText); // 將完整文字設置為標題屬性，方便用戶查看
         }
     });
 });
