@@ -21,7 +21,6 @@ body {
     background-color: transparent !important;
     color: inherit !important;
     box-shadow: inset 1px 3px 10px rgba(0, 0, 0, 0.5);
-    border: none;
     /* border: solid 1px #ffffff; */
     outline: none;
     text-shadow: 0px 0px 10px #ffffff;
@@ -30,16 +29,16 @@ body {
 .nav-link:hover {
     border: none;
     color: #ffffff;
+    text-shadow: 0px 0px 10px #ffffff;
 }
 
 .nav-link:not(:focus):not(:hover) {
-    border: solid 1px #ffffff !important;
-    border: none !important;
     outline: none !important;
     text-decoration: none !important;
 }
 
 .nav-link {
+    border: none !important;
     position: relative;
     text-decoration: none;
     color: inherit;
@@ -204,4 +203,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
+}
+.button-st{
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: solid 1px #000000 !important;
+    border-right: solid 1px #000000 !important;
 }
