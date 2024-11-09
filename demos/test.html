@@ -1,78 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar Example</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #333;
-      color: #fff;
-      position: fixed; /* Add this line */
-      top: 0; /* Add this line */
-      width: 100%; /* Add this line */
-      z-index: 1; /* Add this line */
-    }
-
-    .logo {
-      margin-right: 20px;
-    }
-
-    .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex: 1;
-    }
-
-    .nav-links li {
-      margin-right: 20px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      color: #ccc;
-    }
-
-    .content {
-      padding: 20px;
-      margin-top: 80px; /* Add this line */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .button-row {
+            display: flex;
+            gap: 0;
+        }
+        .button {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555; /* 統一邊界顏色 */
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: box-shadow 0.1s;
+            white-space: nowrap; /* 確保文字不會換行 */
+        }
+        .button:first-child {
+            border-top-left-radius: 10px; /* 更圓的圓角 */
+            border-bottom-left-radius: 10px; /* 更圓的圓角 */
+        }
+        .button:last-child {
+            border-top-right-radius: 10px; /* 更圓的圓角 */
+            border-bottom-right-radius: 10px; /* 更圓的圓角 */
+        }
+        .button:active {
+            box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .button.small {
+            padding: 15px 10px; /* 縮小按鈕大小，使得兩顆小按鈕加起來剛好等於一顆大按鈕 */
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="#">Logo</a>
+    <div class="button-row">
+        <button class="button" style="flex: 1;">所有文章</button>
+        <button class="button" style="flex: 1;">分類</button>
+        <button class="button" style="flex: 1;">標籤</button>
+        <button class="button small" style="flex: 0.5;">Y T</button>
+        <button class="button small" style="flex: 0.5;">巴哈</button>
     </div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="content">
-    <h1>Welcome to our website!</h1>
-    <p>This is a sample website with a navbar that has centered items and a logo on the left.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
 </body>
 </html>
