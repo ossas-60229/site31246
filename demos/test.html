@@ -1,54 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Border Right</title>
     <style>
-        body {
-            background-color: #121212;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .button-row {
-            display: flex;
-            gap: 0;
-        }
-        .button {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555; /* 統一邊界顏色 */
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: box-shadow 0.1s;
-            white-space: nowrap; /* 確保文字不會換行 */
-        }
-        .button:first-child {
-            border-top-left-radius: 10px; /* 更圓的圓角 */
-            border-bottom-left-radius: 10px; /* 更圓的圓角 */
-        }
-        .button:last-child {
-            border-top-right-radius: 10px; /* 更圓的圓角 */
-            border-bottom-right-radius: 10px; /* 更圓的圓角 */
-        }
-        .button:active {
-            box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
-        }
-        .button.small {
-            padding: 15px 10px; /* 縮小按鈕大小，使得兩顆小按鈕加起來剛好等於一顆大按鈕 */
+        .gradient-border-right {
+            border-right: 10px solid;
+            border-image: linear-gradient(to right, red, yellow) 1 100%;
+            border-image-slice: 1;
         }
     </style>
 </head>
 <body>
-    <div class="button-row">
-        <button class="button" style="flex: 1;">所有文章</button>
-        <button class="button" style="flex: 1;">分類</button>
-        <button class="button" style="flex: 1;">標籤</button>
-        <button class="button small" style="flex: 0.5;">Y T</button>
-        <button class="button small" style="flex: 0.5;">巴哈</button>
+    <div class="gradient-border-right">
+        這是一個右邊框有漸層效果的容器。
     </div>
 </body>
 </html>

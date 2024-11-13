@@ -14,10 +14,11 @@ body {
     /* padding-left: 1rem; */
 }
 
-.nav-link{
+.nav-link {
     background-color: #343434;
     border: solid 1px #c3c3c3;
 }
+
 .nav-link.active {
     background-color: transparent !important;
     color: inherit !important;
@@ -231,7 +232,7 @@ body {
     /* 確保文字不會換行 */
 }
 
-.nav-item:first-child > .nav-link{
+.nav-item:first-child>.nav-link {
     border-top-left-radius: 10px !important;
     /* 更圓的圓角 */
     border-bottom-left-radius: 10px !important;
@@ -239,14 +240,16 @@ body {
     /* border-right: none !important;  */
 }
 
-.nav-item:last-child > .nav-link{
+.nav-item:last-child>.nav-link {
     border-top-right-radius: 10px !important;
     /* 更圓的圓角 */
     border-bottom-right-radius: 10px !important;
     /* 更圓的圓角 */
     /* border-left: none !important; */
     border-right: solid 1px #c3c3c3 !important;
+    border-right: solid 1px #727272 !important;
 }
+
 .button:active {
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -255,22 +258,46 @@ body {
     padding: 15px 10px;
     /* 縮小按鈕大小，使得兩顆小按鈕加起來剛好等於一顆大按鈕 */
 }
-.nav-link{
+
+.nav-link {
     background-color: #343434;
     border: solid 1px #c3c3c3 !important;
     border-radius: 0% !important;
     border-right: solid 1px #000000 !important;
     border-left: solid 1px #c3c3c3 !important;
 }
-.nav-link.header{
+
+.nav-link.header {
     background-color: transparent;
     border: none !important;
 }
-.nav-item.header{
+
+.nav-item.header {
     border: none;
 }
-.nb-lr{
-    border-left: solid 1px #c3c3c3 !important;
+
+.nav-link.mid::before {
+    position: absolute;
+    margin-left: -9.5rem;
+    /*絕對定位*/
+    content: "";
+    /*沒有加這段就不會產生偽元素*/
+    width: 2px;
+    height: 2.5rem;
+    background: transparent;
+    border: solid 2px #c3c3c3;
+    border: none;
+    /* border-image: linear-gradient(to right,black, #c3c3c3) 1 50%; */
+    top: 0;
+    left: 150px;
+    z-index: 100;
+
+}
+
+.nb-lr {
+    border-left: solid 1.5px #727272 !important;
+    border-top: solid 1.5px #727272 !important;
     border-right: solid 2.5px #000000 !important;
+    border-bottom: solid 2.5px #000000 !important;
 
 }
