@@ -15,11 +15,14 @@
     <script src="tmp.js"></script>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+    <!--  Jquery and chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="bg-bg hide-scrollbar">
     <!-- header -->
+
     <nav class="navbar-expand-lg navbar-dark bg-dark fixed-top style-navbar navbar backdrop-blur backdrop-blur"
         id="navbar">
         <div class="container-fluid backdrop-blur">
@@ -37,15 +40,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse in-the-middle" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" style="margin-bottom: 1.3rem;">
+                    <style>
+                        .nav-link.underline.header{
+                            font-weight: 800;
+                            font-size: 2rem;
+                        }
+                    </style>
                     <li class="nav-item header">
-                        <a class="nav-link underline header" aria-current="page" href="#">Home</a>
+                        <a class="nav-link underline header" aria-current="page" href="#">所有文章</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">About</a>
+                        <a class="nav-link underline header" href="#">分類</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">Contact</a>
+                        <a class="nav-link underline header" href="#">標籤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link underline header" href="#">YT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link underline header" href="#">巴哈</a>
                     </li>
                 </ul>
             </div>
@@ -74,28 +89,29 @@
                         style="width: 5rem;white-space: nowrap;padding-left: 0.5rem;">所有文章</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link mid text-col button-st nb-lr" id="g-2-tab" data-bs-toggle="tab" data-bs-target="#g-2"
-                        type="button" role="tab" aria-controls="g-2" aria-selected="false"
+                    <button class="nav-link mid text-col button-st nb-lr" id="g-2-tab" data-bs-toggle="tab"
+                        data-bs-target="#g-2" type="button" role="tab" aria-controls="g-2" aria-selected="false"
                         style="width: 5rem;">分類</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link mid text-col button-st nb-lr" id="g-3-tab" data-bs-toggle="tab" data-bs-target="#g-3"
-                        type="button" role="tab" aria-controls="g-3" aria-selected="false"
+                    <button class="nav-link mid text-col button-st nb-lr" id="g-3-tab" data-bs-toggle="tab"
+                        data-bs-target="#g-3" type="button" role="tab" aria-controls="g-3" aria-selected="false"
                         style="width: 5rem;">標籤</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link mid text-col button-st nb-lr" id="g-4-tab" data-bs-toggle="tab" data-bs-target="#g-4"
-                        type="button" role="tab" aria-controls="g-4" aria-selected="false"
+                    <button class="nav-link mid text-col button-st nb-lr" id="g-4-tab" data-bs-toggle="tab"
+                        data-bs-target="#g-4" type="button" role="tab" aria-controls="g-4" aria-selected="false"
                         style="width: 2.5rem;padding-left:  0.55rem;white-space: nowrap;">Y T</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link mid nb-lr text-col button-st " id="g-5-tab" data-bs-toggle="tab" data-bs-target="#g-5"
-                        type="button" role="tab" aria-controls="g-5" aria-selected="false"
+                    <button class="nav-link mid nb-lr text-col button-st " id="g-5-tab" data-bs-toggle="tab"
+                        data-bs-target="#g-5" type="button" role="tab" aria-controls="g-5" aria-selected="false"
                         style="width: 2.5rem;white-space: nowrap;padding-left: 0.25rem;">巴哈</button>
                 </li>
             </ul>
         </div>
         <!-- cards -->
+        <!-- Intro -->
         <div class="row justify-content-center mt-3">
             <div class="card style-card outer-card text-col">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
@@ -111,361 +127,456 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" style="margin-top: 1rem;">
-            <div class="card style-card text-col outer-card">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center;">(熱門、最近、置頂)文章</h5>
-                    <div class="card style-card text-col inner-card mt-3">
-                        <div class="row">
-                            <div class="col-2 d-flex justify-content-center align-items-center"
-                                style="margin-left: 1.5rem;">
-                                <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
-                                <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
-                                <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body" style="margin-left: 1rem;">
-                                    <h5 class="card-title">這是標題
-                                        <br>
-                                        <h6 style="font-size: 0.8rem;">a>b>c</h6>
-                                    </h5>
-                                    <p class="card-text overview" style="width: 130%;">
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                    </p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <!-- article -->
+        <div class="row justify-content-center mt-3">
+            <div class="row justify-content-center" style="margin-top: 1rem;">
+                <div class="card style-card text-col outer-card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">(熱門、最近、置頂)文章</h5>
+                        <div class="card style-card text-col inner-card mt-3">
+                            <div class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center"
+                                    style="margin-left: 1.5rem;">
+                                    <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
+                                    <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
+                                    <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
                                 </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="margin-left: 1rem;">
+                                        <h5 class="card-title">這是標題
+                                            <br>
+                                            <h6 style="font-size: 0.8rem;">a>b>c</h6>
+                                        </h5>
+                                        <p class="card-text overview" style="width: 130%;">
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                        </p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
 
-                            </div>
-                        </div>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                    <div class="card style-card text-col inner-card">
-                        <div class="row">
-                            <div class="col-2 d-flex justify-content-center align-items-center"
-                                style="margin-left: 1.5rem;">
-                                <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
-                                <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
-                                <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body" style="margin-left: 1rem;">
-                                    <h5 class="card-title">這是標題
-                                        <br>
-                                        <h6 style="font-size: 0.8rem;">a>b>c</h6>
-                                    </h5>
-                                    <p class="card-text overview" style="width: 130%;">
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                    </p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                 </div>
-
                             </div>
-                        </div>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                    <div class="card style-card text-col inner-card">
-                        <div class="row">
-                            <div class="col-2 d-flex justify-content-center align-items-center"
-                                style="margin-left: 1.5rem;">
-                                <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
-                                <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
-                                <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body" style="margin-left: 1rem;">
-                                    <h5 class="card-title">這是標題
-                                        <br>
-                                        <h6 style="font-size: 0.8rem;">a>b>c</h6>
-                                    </h5>
-                                    <p class="card-text overview" style="width: 130%;">
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                    </p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                    <div class="card style-card text-col inner-card">
-                        <div class="row">
-                            <div class="col-2 d-flex justify-content-center align-items-center"
-                                style="margin-left: 1.5rem;">
-                                <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
-                                <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
-                                <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body" style="margin-left: 1rem;">
-                                    <h5 class="card-title">這是標題
-                                        <br>
-                                        <h6 style="font-size: 0.8rem;">a>b>c</h6>
-                                    </h5>
-                                    <p class="card-text overview" style="width: 130%;">
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                    </p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                    <div class="card style-card text-col inner-card">
-                        <div class="row">
-                            <div class="col-2 d-flex justify-content-center align-items-center"
-                                style="margin-left: 1.5rem;">
-                                <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
-                                <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
-                                <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body" style="margin-left: 1rem;">
-                                    <h5 class="card-title">這是標題
-                                        <br>
-                                        <h6 style="font-size: 0.8rem;">a>b>c</h6>
-                                    </h5>
-                                    <p class="card-text overview" style="width: 130%;">
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                        這是一段很長的文字
-                                    </p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center" style="margin-top: 1rem;">
-            <div class="card style-card outer-card text-col">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="row no-gutters">
-                    <div class="col-6">
-                        <img src="logo.jpg" style="width: 8rem; clip-path: circle(42% at 49% 50%); " />
-                    </div>
-                    <div class="col-6">
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-align: center;">網站總覽</h5>
-                            <p class="card-text intro">垃圾終究是垃圾，不管怎麼簡介依舊無法改變事實。
-                                <br>
-                                這頻道就像垃圾桶一樣，放了一堆亂七八糟ㄉ東西。
-                                <br>
-                                但還是歡迎訂閱，至於要不要開小鈴鐺就自己決定。
-                            </p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
+                        <div class="card style-card text-col inner-card">
+                            <div class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center"
+                                    style="margin-left: 1.5rem;">
+                                    <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
+                                    <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
+                                    <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="margin-left: 1rem;">
+                                        <h5 class="card-title">這是標題
+                                            <br>
+                                            <h6 style="font-size: 0.8rem;">a>b>c</h6>
+                                        </h5>
+                                        <p class="card-text overview" style="width: 130%;">
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                        </p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                        <div class="card style-card text-col inner-card">
+                            <div class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center"
+                                    style="margin-left: 1.5rem;">
+                                    <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
+                                    <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
+                                    <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="margin-left: 1rem;">
+                                        <h5 class="card-title">這是標題
+                                            <br>
+                                            <h6 style="font-size: 0.8rem;">a>b>c</h6>
+                                        </h5>
+                                        <p class="card-text overview" style="width: 130%;">
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                        </p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                        <div class="card style-card text-col inner-card">
+                            <div class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center"
+                                    style="margin-left: 1.5rem;">
+                                    <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
+                                    <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
+                                    <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="margin-left: 1rem;">
+                                        <h5 class="card-title">這是標題
+                                            <br>
+                                            <h6 style="font-size: 0.8rem;">a>b>c</h6>
+                                        </h5>
+                                        <p class="card-text overview" style="width: 130%;">
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                        </p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                        <div class="card style-card text-col inner-card">
+                            <div class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center"
+                                    style="margin-left: 1.5rem;">
+                                    <!-- <img src="logo.jpg" style="width: 7rem;margin-top: 20%; margin-left: 0.5rem; height: 7.5rem;" /> -->
+                                    <img src="logo.jpg" class="mx-auto" style="width: 8rem;" alt="Image" />
+                                    <!-- <img src="logo.jpg" class="mx-auto" style="height: 10rem;" alt="Image" /> -->
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body" style="margin-left: 1rem;">
+                                        <h5 class="card-title">這是標題
+                                            <br>
+                                            <h6 style="font-size: 0.8rem;">a>b>c</h6>
+                                        </h5>
+                                        <p class="card-text overview" style="width: 130%;">
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                            這是一段很長的文字
+                                        </p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- overview -->
+            <div class="row justify-content-center" style="margin-top: 1rem;">
+                <div class="card style-card outer-card text-col">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="row no-gutter">
+                        <div class="col-2" style="width: 8rem;">
+                            <img src="logo.jpg" style="width: 8rem; clip-path: circle(42% at 49% 50%); " />
+                        </div>
+                        <div class="col-6">
+                            <div class="card-body" style="width: 30rem;">
+                                <h5 class="card-title" style="text-align: center;">網站總覽</h5>
+                                <p class="card-text intro">垃圾終究是垃圾，不管怎麼簡介依舊無法改變事實。
+                                    <br>
+                                    這頻道就像垃圾桶一樣，放了一堆亂七八糟ㄉ東西。
+                                    <br>
+                                    但還是歡迎訂閱，至於要不要開小鈴鐺就自己決定。
+                                </p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+
+                        </div>
 
                     </div>
+                </div>
+            </div>
+            <!-- statistics -->
+            <div class="row justify-content-center" style="margin-top: 1rem;">
+                <div class="card style-card outer-card text-col">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="row no-gutter">
+                        <h5 class="card-title" style="text-align: center; margin-top: 1rem;">網站總覽</h5>
+                    </div>
+
+                    <div class="row no-gutter">
+                        <div class="col-2" style="width: 5rem; margin-left: 10rem;">
+                            <style>
+                                .canva-container {
+                                    width: 10rem;
+                                    height: 10rem;
+                                }
+                            </style>
+                            <div class="canva-container">
+                                <canvas id="myLineChart" width="10" height="10"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-2" style="margin-left: 5rem;">
+                            <div class="card-body" style="width: 25rem; text-align: left;">
+                                <p class="card-text intro" style="text-align: left;">
+                                    文章篇數:
+                                    <br>
+                                    目前訪客數:
+                                    <br>
+                                    今日瀏覽數:
+                                    <br>
+                                    累積總瀏覽數:
+                                    <br>
+                                    本站創立日期:
+                                </p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card-body" style="width: 1rem;">
+                                <p class="card-text intro" style="text-align: right;">
+                                    1
+                                    <br>
+                                    1
+                                    <br>
+                                    1
+                                    <br>
+                                    1
+                                    <br>
+                                    1
+                                </p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <style>
+                .canva-container {
+                    width: 20rem;
+                    height: 10rem;
+                }
+            </style>
+            <div class="canva-container">
+                <canvas id="myLineChart" width="20" height="10"></canvas>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="tab-content justify-content-center" id="lecture-list-content">
+                    <div class="tab-pane fade show active" id="g-1" role="tabpanel" aria-labelledby="g-1-tab">
+                        <div class="container">
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card outer-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade text-col" id="g-2" role="tabpanel" aria-labelledby="g-2-tab">test1
+
+                        <div class="container">
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card rounded-4">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title test1</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 text-col">
+                                <div class="card style-card">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of the card's content.</p>
+                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade text-col" id="g-3" role="tabpanel" aria-labelledby="g-3-tab">test2</div>
+                    <div class="tab-pane fade text-col" id="g-4" role="tabpanel" aria-labelledby="g-4-tab">test3</div>
+                    <div class="tab-pane fade text-col" id="g-5" role="tabpanel" aria-labelledby="g-5-tab">test4</div>
 
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-5">
-            <div class="tab-content justify-content-center" id="lecture-list-content">
-                <div class="tab-pane fade show active" id="g-1" role="tabpanel" aria-labelledby="g-1-tab">
-                    <div class="container">
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card outer-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade text-col" id="g-2" role="tabpanel" aria-labelledby="g-2-tab">test1
-
-                    <div class="container">
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card rounded-4">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title test1</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center mt-3 text-col">
-                            <div class="card style-card">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make
-                                        up
-                                        the bulk of the card's content.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="tab-pane fade text-col" id="g-3" role="tabpanel" aria-labelledby="g-3-tab">test2</div>
-                <div class="tab-pane fade text-col" id="g-4" role="tabpanel" aria-labelledby="g-4-tab">test3</div>
-                <div class="tab-pane fade text-col" id="g-5" role="tabpanel" aria-labelledby="g-5-tab">test4</div>
-
-            </div>
-        </div>
-    </div>
 </body>
+<script>
+    $(document).ready(function () {
+        var ctx = $('#myLineChart')[0].getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line', // 圖表類型為折線圖
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'My First dataset',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    fill: false,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
 
 </html>

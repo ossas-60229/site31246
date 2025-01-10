@@ -239,6 +239,7 @@ body {
 .nav-link.header{
     background-color: transparent !important;
     border: none !important;
+    /* font-size: 1.1rem; */
 }
 .nav-item.header{
     border: none !important;
