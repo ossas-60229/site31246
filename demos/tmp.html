@@ -48,19 +48,19 @@
                         }
                     </style>
                     <li class="nav-item header">
-                        <a class="nav-link underline header" aria-current="page" href="#">所有文章</a>
+                        <button class="nav-link underline header" id="g-1-tab" aria-current="page">所有文章</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">分類</a>
+                        <button class="nav-link underline header" id="g-2-tab" href="#">分類</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">標籤</a>
+                        <button class="nav-link underline header" id="g-3-tab" href="#">標籤</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">YT</a>
+                        <button class="nav-link underline header" id="g-4-tab" >YT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline header" href="#">巴哈</a>
+                        <button class="nav-link underline header" id="g-5-tab" >巴哈</a>
                     </li>
                 </ul>
             </div>
@@ -552,6 +552,8 @@
         </div>
 </body>
 <script>
+    var YTlink = 'https://www.youtube.com/@Loner_Laozi';
+    var HomeLink = 'https://home.gamer.com.tw/homeindex.php?owner=TL87';
     $(document).ready(function () {
         var ctx = $('#myLineChart')[0].getContext('2d');
         var myLineChart = new Chart(ctx, {
@@ -573,6 +575,25 @@
                     }
                 }
             }
+        });
+    });
+    $(document).ready(function () {
+        $("button.nav-link.underline").click(function () {
+            var id = this.id;
+            $('.nav-tabs button[id="' + id + '"]').tab('show');
+        });
+    });
+    function OpenNewTab(url) {
+        window.open(url);
+    }
+    $(document).ready(function () {
+        $('button[id="g-4-tab"]').click(function () { 
+            // 新視窗
+            OpenNewTab(YTlink);
+        });
+        $('button[id="g-5-tab"]').click(function () { 
+            // 新視窗
+            OpenNewTab(HomeLink);
         });
     });
 </script>
