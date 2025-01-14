@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse in-the-middle" id="navbarSupportedContent">
                 <ul class="navbar-nav" style="margin-bottom: 1.3rem;">
                     <style>
-                        .nav-link.underline.header{
+                        .nav-link.underline.header {
                             font-weight: 800;
                             font-size: 2rem;
                         }
@@ -57,10 +57,10 @@
                         <button class="nav-link underline header" id="g-3-tab" href="#">標籤</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link underline header" id="g-4-tab" >YT</a>
+                        <button class="nav-link underline header" id="g-4-tab">YT</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link underline header" id="g-5-tab" >巴哈</a>
+                        <button class="nav-link underline header" id="g-5-tab">巴哈</a>
                     </li>
                 </ul>
             </div>
@@ -111,6 +111,38 @@
             </ul>
         </div>
         <!-- cards -->
+        <!-- tags -->
+        <div class="row justify-content-center mt-3">
+            <div class="card style-card outer-card text-col">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;">標籤</h5>
+                    <p class="card-text intro">
+                    <div class="row">
+                        <div class="col-2">
+                            <button class="nav-link tag">tag1</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="nav-link tag">tag2</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="nav-link tag">tag3</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="nav-link tag">tag4</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="nav-link tag">tag5</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="nav-link tag">tag6</button>
+                        </div>
+                    </div>
+                    </p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
         <!-- Intro -->
         <div class="row justify-content-center mt-3">
             <div class="card style-card outer-card text-col">
@@ -587,11 +619,11 @@
         window.open(url);
     }
     $(document).ready(function () {
-        $('button[id="g-4-tab"]').click(function () { 
+        $('button[id="g-4-tab"]').click(function () {
             // 新視窗
             OpenNewTab(YTlink);
         });
-        $('button[id="g-5-tab"]').click(function () { 
+        $('button[id="g-5-tab"]').click(function () {
             // 新視窗
             OpenNewTab(HomeLink);
         });
