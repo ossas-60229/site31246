@@ -1,3 +1,4 @@
+import React from 'react';
 document.addEventListener("DOMContentLoaded", () => {
     // Select the tab container
     const tabsContainer = document.querySelector(".tabs");
