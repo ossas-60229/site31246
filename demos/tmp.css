@@ -268,11 +268,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Set a background color */
-body {
-  background-color: #474e5d;
-  font-family: Helvetica, sans-serif;
-}
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
@@ -397,4 +392,97 @@ body {
   .right {
     left: 0%;
   }
+}
+/* directory tree */
+/* directory tree */
+.directory-tree {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.directory-tree::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  left: 24.7%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container.tree {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container.tree::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 0.5rem;
+  right: -17px;
+  left: -0.37rem;
+  background-color: whitesmoke;
+  border: none;
+  top: 35%;
+  border-radius: 0%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 0;
+}
+
+/* Add arrows to the left container (pointing right) */
+/* .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+} */
+
+/* Add arrows to the right container (pointing left) */
+ /* .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}  */
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: black;
+  position: relative;
+  border-radius: 6px;
 }
