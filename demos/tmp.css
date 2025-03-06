@@ -1,258 +1,273 @@
 .bg-button {
-    background-color: #000000;
-    color: #ffffff;
-    gap: 0;
-    /* padding-left: 1rem; */
-}
-
-.nav-link{
-    background-color: #343434;
-    border: solid 1px #c3c3c3;
-    border-left: none;
-}
-.nav-link.active {
-    background-color: transparent !important;
-    color: inherit !important;
-    /* box-shadow: inset 1px 3px 10px rgba(0, 0, 0, 0.5); */
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
-    background-color: #343434 !important;
-    /* border: solid 1px #ffffff; */
-    outline: none;
-    text-shadow: 0px 0px 10px #ffffff;
-}
-
-.nav-link:hover {
-    border: none;
-    color: #ffffff;
-    text-shadow: 0px 0px 10px #ffffff;
-}
-
-.nav-link:not(:focus):not(:hover) {
-    outline: none !important;
-    text-decoration: none !important;
+  background-color: #000000;
+  color: #ffffff;
+  gap: 0;
+  /* padding-left: 1rem; */
 }
 
 .nav-link {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-    /* border: solid 1px #ffffff; */
+  background-color: #343434;
+
+  .card.right {
+    background-color: #000000;
+  }
+
+  border: solid 1px #c3c3c3;
+  border-left: none;
+}
+
+.nav-link.active {
+  background-color: transparent !important;
+  color: inherit !important;
+  /* box-shadow: inset 1px 3px 10px rgba(0, 0, 0, 0.5); */
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #343434 !important;
+  /* border: solid 1px #ffffff; */
+  outline: none;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+.nav-link:hover {
+  border: none;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+.nav-link:not(:focus):not(:hover) {
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  /* border: solid 1px #ffffff; */
 }
 
 .nav-link.underline::after {
-    content: "";
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background-color: #ffffff;
-    transition: width 0.3s;
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s;
 }
 
 .nav-link.underline:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .style-navbar {
-    background-color: #343434;
-    width: 100%;
-    border-bottom: solid 3px #808080;
-    height: 4rem;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+  background-color: #343434;
+  width: 100%;
+  border-bottom: solid 3px #808080;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
 }
 
 .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .navbar {
-    /* display: none; */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000;
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1000;
 }
 
 .navbar {
-    position: fixed;
+  position: fixed;
 }
 
 .navbar.visible {
-    display: block;
-    opacity: 0.95;
-    z-index: 1000;
+  display: block;
+  opacity: 0.95;
+  z-index: 1000;
 }
 
 .backdrop-blur {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .bg-bg {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .text-col {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .style-card {
-    background-color: #121212;
-    border: solid 1px #c3c3c3;
-    width: 45rem;
-    /* width: 21cm; */
-    /* width: 793px; */
-    height: auto;
-    margin-bottom: 2rem;
-    z-index: 500;
+  background-color: #121212;
+  border: solid 1px #c3c3c3;
+  width: 45rem;
+  /* width: 21cm; */
+  /* width: 793px; */
+  height: auto;
+  margin-bottom: 2rem;
+  z-index: 500;
 }
 
 /* Custom scrollbar styles */
 .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body::-webkit-scrollbar {
-    width: 9px;
-    /* Width of the scrollbar */
+  width: 9px;
+  /* Width of the scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-    background: #000000;
-    /* Background of the scrollbar track */
-    border-radius: 10px;
-    /* Rounded corners for the track */
-    z-index: 999;
+  background: #000000;
+  /* Background of the scrollbar track */
+  border-radius: 10px;
+  /* Rounded corners for the track */
+  z-index: 999;
 
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #888;
-    /* Color of the scrollbar thumb */
-    border-radius: 10px;
-    /* Rounded corners for the thumb */
+  background: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Rounded corners for the thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    /* Color of the scrollbar thumb when hovered */
+  background: #555;
+  /* Color of the scrollbar thumb when hovered */
 }
 
 body {
-    overflow-y: auto;
-    overflow: auto !important;
-    scrollbar-width: auto !important;
-    scrollbar-gutter: stable !important;
+  overflow-y: auto;
+  overflow: auto !important;
+  scrollbar-width: auto !important;
+  scrollbar-gutter: stable !important;
 }
 
 .card-text.intro {
-    text-align: center;
+  text-align: center;
 }
 
 .outer-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    border-radius: 20px;
-    /* 設置外部卡片的高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  border-radius: 20px;
+  /* 設置外部卡片的高度 */
 }
 
 .inner-card {
-    border-left: none;
-    border-right: none;
-    /* margin-left: 4.8px;
+  border-left: none;
+  border-right: none;
+  /* margin-left: 4.8px;
     margin-right: 4.8px; */
-    width: 39.5rem;
-    /* width: 95%; */
-    /* width: 45vw; */
-    justify-content: center;
-    align-items: center;
-    border-radius: 0%;
+  width: 39.5rem;
+  /* width: 95%; */
+  /* width: 45vw; */
+  justify-content: center;
+  align-items: center;
+  border-radius: 0%;
 }
 
 @media (max-width: 39.5rem) {
-    .inner-card {
-        width: 30rem;
-    }
+  .inner-card {
+    width: 30rem;
+  }
 }
 
 .in-the-middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
 }
 
 
 .button-row {
-    display: flex;
-    gap: 0;
-}
-.nav-item:first-child > .nav-link{
-    border-top-left-radius: 10px !important;
-    /* 更圓的圓角 */
-    border-bottom-left-radius: 10px !important;
-    /* 更圓的圓角 */
-    border-left: solid 1px #c3c3c3 !important;
-    /* border-right: none !important;  */
-}
-.nav-item:first-child > .nav-link.header{
-    border-left: none !important;
-    /* border-right: none !important;  */
+  display: flex;
+  gap: 0;
 }
 
-.nav-item:last-child > .nav-link{
-    border-top-right-radius: 10px !important;
-    /* 更圓的圓角 */
-    border-bottom-right-radius: 10px !important;
-    /* 更圓的圓角 */
-    /* border-left: none !important; */
-    border-right: solid 1px #c3c3c3 !important;
+.nav-item:first-child>.nav-link {
+  border-top-left-radius: 10px !important;
+  /* 更圓的圓角 */
+  border-bottom-left-radius: 10px !important;
+  /* 更圓的圓角 */
+  border-left: solid 1px #c3c3c3 !important;
+  /* border-right: none !important;  */
 }
-.nav-item:last-child > .nav-link.header{
-    border-right: none !important;
-    /* border-right: none !important;  */
+
+.nav-item:first-child>.nav-link.header {
+  border-left: none !important;
+  /* border-right: none !important;  */
 }
-.nav-link{
-    border: solid 1px #c3c3c3 !important;
-    border-radius: 0% !important;
-    background-color: #343434 !important;
-    /* border-top: solid 1px #c3c3c3 !important; */
-    /* border-right: solid 1px #000000 !important;
+
+.nav-item:last-child>.nav-link {
+  border-top-right-radius: 10px !important;
+  /* 更圓的圓角 */
+  border-bottom-right-radius: 10px !important;
+  /* 更圓的圓角 */
+  /* border-left: none !important; */
+  border-right: solid 1px #c3c3c3 !important;
+}
+
+.nav-item:last-child>.nav-link.header {
+  border-right: none !important;
+  /* border-right: none !important;  */
+}
+
+.nav-link {
+  border: solid 1px #c3c3c3 !important;
+  border-radius: 0% !important;
+  background-color: #343434 !important;
+  /* border-top: solid 1px #c3c3c3 !important; */
+  /* border-right: solid 1px #000000 !important;
     border-left: solid 1px #c3c3c3 !important; */
 }
-.nav-link.header{
-    background-color: transparent !important;
-    border: none !important;
-    /* font-size: 1.1rem; */
+
+.nav-link.header {
+  background-color: transparent !important;
+  border: none !important;
+  /* font-size: 1.1rem; */
 }
-.nav-item.header{
-    border: none !important;
+
+.nav-item.header {
+  border: none !important;
 }
-.nb-lr{
-    border-left: none !important;
-    border-right: none !important;
+
+.nb-lr {
+  border-left: none !important;
+  border-right: none !important;
 
 }
-.nav-link.tag{
-    border: none !important;
-    background: transparent !important;
+
+.nav-link.tag {
+  border: none !important;
+  background: transparent !important;
 }
+
 /* vertical timeline */
 * {
   box-sizing: border-box;
@@ -263,6 +278,7 @@ body {
   background-color: #474e5d;
   font-family: Helvetica, sans-serif;
 }
+
 /* vertical time line
 * {
   box-sizing: border-box;
@@ -304,7 +320,7 @@ body {
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid #FF9F55;
+  border: none;
   top: 35%;
   border-radius: 50%;
   z-index: 1;
@@ -363,19 +379,20 @@ body {
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
+
+  /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
   }
 
-/* Full-width containers */
+  /* Full-width containers */
   .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
-/* Make sure that all arrows are pointing leftwards */
+  /* Make sure that all arrows are pointing leftwards */
   .container::before {
     left: 60px;
     border: medium solid white;
@@ -383,16 +400,18 @@ body {
     border-color: transparent white transparent transparent;
   }
 
-/* Make sure all circles are at the same spot */
-  .left::after, .right::after {
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
     left: 15px;
   }
 
-/* Make all right containers behave like the left ones */
+  /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
   }
 }
+
 /* directory tree */
 /* directory tree */
 .directory-tree {
@@ -461,7 +480,7 @@ body {
 } */
 
 /* Add arrows to the right container (pointing left) */
- /* .right::before {
+/* .right::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -485,4 +504,40 @@ body {
   background-color: black;
   position: relative;
   border-radius: 6px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.card-body.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 2rem;
+  bottom: 6rem;
+  left: 0rem;
+  margin-left: -3px;
+}
+
+.card.right {
+  background-color: #121212;
+}
+
+/* Place the container to the right */
+.timeline>.right {
+  left: 0;
+}
+
+/* Fix the circle for containers on the right side */
+.timeline>.right::after {
+  left: -30px;
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: none;
+  top: 35%;
+  border-radius: 50%;
+  z-index: 1;
 }
