@@ -512,11 +512,13 @@ body {
   position: absolute;
   width: 6px;
   background-color: white;
-  top: 2rem;
+  top: 3rem;
   bottom: 6rem;
   left: 0rem;
   margin-left: -3px;
 }
+
+
 
 .card.right {
   background-color: #121212;
@@ -540,4 +542,31 @@ body {
   top: 35%;
   border-radius: 50%;
   z-index: 1;
+}
+
+.card.right.style-card:hover {
+  margin-left: 2rem;
+  color: red;
+}
+
+.blocker:hover::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 10rem;
+  background-color: #121212;
+  top: 0rem;
+  left: -3.2rem;
+  margin-left: -3px;
+}
+
+.implicit-line:hover::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 10rem;
+  background-color: white;
+  top: 0rem;
+  left: -1rem;
+  margin-left: -3px;
 }
