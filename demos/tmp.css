@@ -545,8 +545,22 @@ body {
 }
 
 .card.right.style-card:hover {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
+  position: relative;
+  /* transition: translate(100px, 10px); */
   color: red;
+  /* transform: translateX(60px); */
+  animation: leftIn 0.5s forwards;
+}
+
+@keyframes leftIn {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateX(30px);
+  }
 }
 
 .blocker:hover::after {
@@ -556,8 +570,19 @@ body {
   height: 10rem;
   background-color: #121212;
   top: 0rem;
-  left: -3.2rem;
+  left: -20px;
   margin-left: -3px;
+  animation: leftOut 0.5s forwards;
+}
+
+@keyframes leftOut {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateX(-30px);
+  }
 }
 
 .implicit-line:hover::after {
