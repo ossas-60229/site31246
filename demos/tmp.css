@@ -550,7 +550,7 @@ body {
   /* transition: translate(100px, 10px); */
   color: red;
   /* transform: translateX(60px); */
-  animation: leftIn 0.5s forwards;
+  animation: leftIn 0.5s forwards ease-out;
 }
 
 @keyframes leftIn {
@@ -572,7 +572,7 @@ body {
   top: 0rem;
   left: -20px;
   margin-left: -3px;
-  animation: leftOut 0.5s forwards;
+  animation: leftOut 0.5s forwards ease-out;
 }
 
 @keyframes leftOut {
