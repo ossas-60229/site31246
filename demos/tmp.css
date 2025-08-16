@@ -426,8 +426,8 @@ body {
   position: absolute;
   width: 6px;
   background-color: white;
-  top: 2.5rem;
-  bottom: 2.5rem;
+  top: 2rem;
+  bottom: 3rem;
   left: 24.7%;
   margin-left: -3px;
 }
