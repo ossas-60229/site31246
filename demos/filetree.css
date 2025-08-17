@@ -1,0 +1,128 @@
+/* ======================================= */
+/* 檔案瀏覽器樣式 - 修正版 */
+/* ======================================= */
+.file-tree-container {
+    background-color: #121212;
+    border: solid 1px #c3c3c3;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 25rem;
+    margin-left: 25rem;
+    color: #ffffff;
+}
+
+.file-tree-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 巢狀列表，用來隱藏未開啟的資料夾內容 */
+.file-tree-container .file-tree-item[data-is-folder="true"] > ul {
+    display: none;
+    /* margin-top: 10rem; */
+}
+
+/* 開啟的資料夾，顯示其內容 */
+.file-tree-container .file-tree-item[data-is-open="true"] > ul {
+    display: block;
+    margin-top: 1rem; /* 增加上邊距，數值可依需求調整 */
+}
+
+/* 列表項目樣式 */
+.file-tree-container .file-tree-item {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* 檔案和資料夾圖示 (用 ::before) */
+.file-tree-container .file-tree-item::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0%;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 檔案圖示 (特定設定) */
+
+/* 資料夾圖示 - 關閉 (特定設定) */
+.file-tree-container .file-tree-item[data-is-folder]:not([data-is-open="true"])::before {
+    background-image: url("folder_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48.png");
+    top: 50%;
+}
+
+/* 資料夾圖示 - 開啟 (特定設定) */
+.file-tree-container .file-tree-item[data-is-open="true"]::before {
+    background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
+    top: 10%;
+}
+
+/* 垂直線 (用 ::after) */
+.file-tree-container .file-tree-item::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #c3c3c3;
+}
+.file-tree-container .file-tree-item:not([data-is-folder="true"])::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 50%;
+    background-color: #c3c3c3;
+}
+
+/* 水平線 (用另一個偽元素) */
+.file-tree-container .file-tree-item > ul > li::after {
+    content: '';
+    position: absolute;
+    left: -1rem; /* 保留你修改的左側位置 */
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
+}
+.line-container::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #c3c3c3;
+}
+.line-container::before {
+    content: '';
+    position: absolute;
+    left: -1rem; /* 保留你修改的左側位置 */
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
+}
+.file-tree-container .file-tree-item:not([data-is-folder])::before {
+    background-image: url('home_1000dp_FFFFFF.png');
+    top: 50%;
+}
