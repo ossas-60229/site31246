@@ -595,3 +595,103 @@ body {
   left: -1rem;
   margin-left: -3px;
 }
+/* ======================================= */
+/* 檔案瀏覽器樣式 */
+/* ======================================= */
+/* ======================================= */
+/* 檔案瀏覽器樣式 */
+/* ======================================= */
+.file-tree-container {
+    background-color: #121212;
+    border: solid 1px #c3c3c3;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #ffffff;
+}
+
+.file-tree-container .file-tree {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 巢狀列表，用來隱藏未開啟的資料夾內容 */
+.file-tree-container .file-tree-item[data-is-folder="true"] > ul {
+    display: none;
+}
+
+/* 開啟的資料夾，顯示其內容 */
+.file-tree-container .file-tree-item[data-is-open="true"] > ul {
+    display: block;
+}
+
+/* 列表項目樣式 */
+.file-tree-container .file-tree-item {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* 檔案和資料夾圖示 */
+.file-tree-container .file-tree-item::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 檔案圖示 */
+.file-tree-container .file-tree-item:not([data-is-folder])::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c3c3c3"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>');
+}
+
+/* 資料夾圖示 - 關閉 */
+.file-tree-container .file-tree-item[data-is-folder]:not([data-is-open="true"])::before {
+    background-image: url("folder_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48.png");
+}
+
+/* 資料夾圖示 - 開啟 */
+.file-tree-container .file-tree-item[data-is-open="true"]::before {
+    background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
+}
+
+/* 垂直線 */
+.file-tree-container .file-tree-item::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: calc(100% + 5px);
+    background-color: #c3c3c3;
+}
+
+/* 每個項目前面的水平線 */
+.file-tree-container .file-tree-item > ul > li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
+}
+
+/* 移除最外層列表項目的垂直線 */
+.file-tree-container .file-tree > li::after {
+    /* display: none; */
+}

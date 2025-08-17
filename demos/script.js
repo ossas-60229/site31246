@@ -13,14 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = item.getAttribute('data-is-open') === 'true';
 
             // 切換開啟狀態
+            // 這是唯一需要做的改變，因為 CSS 會根據這個屬性自動處理顯示與隱藏
             item.setAttribute('data-is-open', !isOpen);
-
-            // 獲取該資料夾下的巢狀列表
-            const subList = item.querySelector('ul');
-            if (subList) {
-                // 根據新的狀態顯示或隱藏巢狀列表
-                subList.style.display = isOpen ? 'none' : 'block';
-            }
         });
     });
 });

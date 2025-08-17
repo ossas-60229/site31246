@@ -5,14 +5,9 @@
     --spacing: 20px; /* 層級間距 */
 }
 
-body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
 
 .file-tree-container {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -126,5 +121,5 @@ h2 {
 
 /* 移除根目錄項目的線條 */
 .file-tree > li::after {
-    display: none;
+    /* display: none; */
 }
