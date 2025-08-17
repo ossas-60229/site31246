@@ -83,41 +83,24 @@
     background-color: #c3c3c3;
 }
 .file-tree-container .file-tree-item:not([data-is-folder="true"])::after {
-    content: '';
-    position: absolute;
-    left: -1rem;
-    top: 30%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 50%;
-    background-color: #c3c3c3;
+    display: none;
 }
 
-/* 水平線 (用另一個偽元素) */
-.file-tree-container .file-tree-item > ul > li::after {
-    content: '';
-    position: absolute;
-    left: -1rem; /* 保留你修改的左側位置 */
-    top: 50%;
-    width: 12px;
-    height: 3px;
-    background-color: #c3c3c3;
-}
 .line-container::after {
     content: '';
     position: absolute;
-    left: -1rem;
-    top: 50%;
+    left: 2rem;
+    top: 2.5rem;
     transform: translateY(-50%);
     width: 3px;
-    height: 100%;
+    height: 1rem;
     background-color: #c3c3c3;
 }
 .line-container::before {
     content: '';
     position: absolute;
-    left: -1rem; /* 保留你修改的左側位置 */
-    top: 50%;
+    left: 2rem; /* 保留你修改的左側位置 */
+    top: 3rem;
     width: 12px;
     height: 3px;
     background-color: #c3c3c3;
