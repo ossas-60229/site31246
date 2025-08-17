@@ -85,12 +85,11 @@
 .file-tree-container .file-tree-item:not([data-is-folder="true"])::after {
     display: none;
 }
-
 .line-container::after {
     content: '';
     position: absolute;
-    left: 2rem;
-    top: 2.5rem;
+    left: -1rem;
+    top: 50%;
     transform: translateY(-50%);
     width: 3px;
     height: 1rem;
@@ -99,8 +98,47 @@
 .line-container::before {
     content: '';
     position: absolute;
-    left: 2rem; /* 保留你修改的左側位置 */
-    top: 3rem;
+    left: -1rem; /* 保留你修改的左側位置 */
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
+}
+
+.line-container-last::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 20%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1rem;
+    background-color: #c3c3c3;
+}
+.line-container-last::before {
+    content: '';
+    position: absolute;
+    left: -1rem; /* 保留你修改的左側位置 */
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
+}
+ul li:last-child >.line-container::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 20%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1rem;
+    background-color: #c3c3c3;
+}
+ul li:last-child >.line-container::before {
+    content: '';
+    position: absolute;
+    left: -1rem; /* 保留你修改的左側位置 */
+    top: 50%;
     width: 12px;
     height: 3px;
     background-color: #c3c3c3;
