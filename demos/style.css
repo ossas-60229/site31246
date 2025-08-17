@@ -1,125 +1,94 @@
-/* 基本樣式 */
-:root {
-    --line-color: #ccc; /* 線條顏色 */
-    --icon-size: 16px; /* 圖示大小 */
-    --spacing: 20px; /* 層級間距 */
-}
-
-
+/* ======================================= */
+/* 檔案瀏覽器樣式 */
+/* ======================================= */
 .file-tree-container {
-    /* background-color: #fff; */
+    background-color: #121212;
+    border: solid 1px #c3c3c3;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 25rem;
+    margin-left: 25rem;
+    color: #ffffff;
 }
 
-h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-.file-tree {
+.file-tree-container ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* 巢狀列表，用來隱藏未開啟的資料夾內容 */
+.file-tree-container .file-tree-item[data-is-folder="true"] > ul {
+    display: none;
+}
+
+/* 開啟的資料夾，顯示其內容 */
+.file-tree-container .file-tree-item[data-is-open="true"] > ul {
+    display: block;
+    margin-top: 10px; /* 增加上邊距 */
+}
+
 /* 列表項目樣式 */
-.file-tree-item {
+.file-tree-container .file-tree-item {
     position: relative;
-    padding-left: var(--spacing);
-    line-height: var(--icon-size);
-    margin-bottom: 5px;
+    padding-left: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px; /* 項目之間的間距 */
     font-size: 14px;
     cursor: pointer;
     white-space: nowrap;
 }
 
 /* 檔案和資料夾圖示 */
-.file-tree-item::before {
+.file-tree-container .file-tree-item::before {
     content: '';
     display: inline-block;
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: 16px;
+    height: 16px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: translateY(-2px);
 }
 
-/* 檔案圖示 (使用 SVG 或圖片) */
-.file-tree-item:not([data-is-folder])::before {
-    /* 這裡可以替換成你的檔案圖示 */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666666"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>');
+/* 檔案圖示 */
+.file-tree-container .file-tree-item:not([data-is-folder])::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c3c3c3"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>');
 }
 
-/* 資料夾圖示 */
-.file-tree-item[data-is-folder]::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f9b84a"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>');
+/* 資料夾圖示 - 關閉 */
+.file-tree-container .file-tree-item[data-is-folder]:not([data-is-open="true"])::before {
+    background-image: url("folder_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48.png");
 }
 
-/* 開啟的資料夾圖示 */
-.file-tree-item[data-is-open="true"]::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f9b84a"><path d="M19 8H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM5 10v10h14V10H5zM5 6v2h14V6c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2z"/></svg>');
+/* 資料夾圖示 - 開啟 */
+.file-tree-container .file-tree-item[data-is-open="true"]::before {
+    background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
 }
 
-/* 巢狀列表的樣式，用來隱藏未開啟的資料夾內容 */
-.file-tree-item[data-is-folder="true"] > ul {
-    display: none;
-    margin-top: 5px;
-}
-
-/* 開啟的資料夾，顯示其內容 */
-.file-tree-item[data-is-open="true"] > ul {
-    display: block;
-}
-
-/* 水平線和垂直線 */
-.file-tree-item::after {
+/* 垂直線 */
+.file-tree-container .file-tree-item::after {
     content: '';
     position: absolute;
-    left: calc(var(--spacing) / 2);
-    top: 0;
-    width: 1px;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
     height: 100%;
-    background-color: var(--line-color);
+    background-color: #c3c3c3;
 }
 
-/* 每個項目前的橫線 */
-.file-tree-item:not(:last-child)::after {
-    height: calc(100% + 5px); /* 讓線延伸到下一個項目 */
-}
-
-.file-tree-item:not(:last-child)::after {
+/* 每個項目前面的水平線 */
+.file-tree-container .file-tree-item > ul > li::before {
     content: '';
     position: absolute;
-    left: calc(var(--spacing) / 2);
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: var(--line-color);
-}
-
-.file-tree-item:not(:last-child)::after {
-    height: calc(100% + 5px); /* 讓線延伸到下一個項目 */
-}
-
-.file-tree-item > ul > li::before {
-    /* 這裡負責繪製橫線 */
-    content: '';
-    position: absolute;
-    left: calc(var(--spacing) / 2);
-    top: calc(var(--icon-size) / 2);
-    width: calc(var(--spacing) / 2);
-    height: 1px;
-    background-color: var(--line-color);
-}
-
-/* 移除根目錄項目的線條 */
-.file-tree > li::after {
-    /* display: none; */
+    left: 8px;
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: #c3c3c3;
 }

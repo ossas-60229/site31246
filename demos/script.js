@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 選擇所有標記為資料夾的列表項目
-    const folderItems = document.querySelectorAll('.file-tree-item[data-is-folder="true"]');
+    // 選擇整個樹狀結構容器
+    const fileTreeContainer = document.querySelector('.file-tree-container');
 
-    // 遍歷每個資料夾項目
-    folderItems.forEach(item => {
-        // 為每個資料夾項目添加點擊事件監聽器
-        item.addEventListener('click', (event) => {
-            // 阻止事件冒泡，避免點擊子元素時也觸發父元素的點擊事件
+    // 為容器添加單一的點擊事件監聽器
+    fileTreeContainer.addEventListener('click', (event) => {
+        // 找到被點擊的元素，並向上尋找最近的 .file-tree-item
+        const clickedItem = event.target.closest('.file-tree-item');
+
+        // 確保我們點擊的是一個資料夾
+        if (clickedItem && clickedItem.getAttribute('data-is-folder') === 'true') {
+            // 阻止事件冒泡，避免點擊子元素也觸發父元素
             event.stopPropagation();
 
             // 取得目前的開啟狀態
-            const isOpen = item.getAttribute('data-is-open') === 'true';
+            const isOpen = clickedItem.getAttribute('data-is-open') === 'true';
 
-            // 切換開啟狀態
-            // 這是唯一需要做的改變，因為 CSS 會根據這個屬性自動處理顯示與隱藏
-            item.setAttribute('data-is-open', !isOpen);
-        });
+            // 切換開啟狀態，這會觸發 CSS 樣式
+            clickedItem.setAttribute('data-is-open', !isOpen);
+        }
     });
 });
