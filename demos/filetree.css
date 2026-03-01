@@ -21,13 +21,13 @@
 /* 巢狀列表，用來隱藏未開啟的資料夾內容 */
 .file-tree-container .file-tree-item[data-is-folder="true"] > ul {
     display: none;
-    /* margin-top: 10rem; */
+    /* margin-top: 0rem; */
 }
 
 /* 開啟的資料夾，顯示其內容 */
 .file-tree-container .file-tree-item[data-is-open="true"] > ul {
     display: block;
-    margin-top: 1rem; /* 增加上邊距，數值可依需求調整 */
+    /* top: 100%; */
 }
 
 /* 列表項目樣式 */
@@ -35,11 +35,15 @@
     position: relative;
     padding-left: 20px;
     line-height: 1.5;
-    margin-bottom: 2rem;
+    margin-bottom: 24px;
     margin-left: 2rem;
     font-size: 14px;
     cursor: pointer;
     white-space: nowrap;
+}
+/* 列表項目樣式 */
+.file-tree-container .file-tree-item .tight-space {
+    margin-bottom: 12px;
 }
 
 /* 檔案和資料夾圖示 (用 ::before) */
@@ -68,7 +72,7 @@
 /* 資料夾圖示 - 開啟 (特定設定) */
 .file-tree-container .file-tree-item[data-is-open="true"]::before {
     background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
-    top: 10%;
+    top: 5%;
 }
 
 /* 垂直線 (用 ::after) */
@@ -85,26 +89,42 @@
 .file-tree-container .file-tree-item:not([data-is-folder="true"])::after {
     display: none;
 }
+/* 統一設定線條容器 */
+.line-container {
+    position: relative;
+}
+
+/* 垂直線 (Vertical Line) */
 .line-container::after {
     content: '';
     position: absolute;
-    left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    left: -2rem;
+    top: 50%; /* 置中起點 */
+    transform: translateY(-50%); /* 向上偏移自身一半，達成絕對置中 */
     width: 3px;
-    height: 1rem;
+    height: 12px; /* 固定高度 */
     background-color: #c3c3c3;
 }
+
+/* 水平線 (Horizontal Line) */
 .line-container::before {
     content: '';
     position: absolute;
-    left: -1rem; /* 保留你修改的左側位置 */
+    left: -2rem; /* 與垂直線左側對齊 */
     top: 50%;
-    width: 12px;
+    transform: translateY(-50%); /* 確保水平線自身厚度也垂直置中 */
+    width: 12px; /* 長度與垂直線高度相同 */
     height: 3px;
     background-color: #c3c3c3;
 }
 
+/* 針對最後一個項目的垂直線處理 */
+/* 如果是最後一個項目，通常垂直線只需要上半段 */
+ul li:last-child > .line-container::after {
+    height: 12px; /* 高度減半 */
+    top: calc(6px); /* 向上移動，使其底部剛好碰到水平線中心 */
+}
+/* 
 .line-container-last::after {
     content: '';
     position: absolute;
@@ -118,7 +138,7 @@
 .line-container-last::before {
     content: '';
     position: absolute;
-    left: -1rem; /* 保留你修改的左側位置 */
+    left: -1rem;
     top: 50%;
     width: 12px;
     height: 3px;
@@ -137,12 +157,13 @@ ul li:last-child >.line-container::after {
 ul li:last-child >.line-container::before {
     content: '';
     position: absolute;
-    left: -1rem; /* 保留你修改的左側位置 */
+    left: -1rem; 
     top: 50%;
     width: 12px;
     height: 3px;
     background-color: #c3c3c3;
-}
+} 
+*/
 .file-tree-container .file-tree-item:not([data-is-folder])::before {
     background-image: url('home_1000dp_FFFFFF.png');
     top: 50%;
