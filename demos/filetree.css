@@ -19,13 +19,13 @@
 }
 
 /* 巢狀列表，用來隱藏未開啟的資料夾內容 */
-.file-tree-container .file-tree-item[data-is-folder="true"] > ul {
+.file-tree-container .file-tree-item[data-is-folder="true"]>ul {
     display: none;
     /* margin-top: 0rem; */
 }
 
 /* 開啟的資料夾，顯示其內容 */
-.file-tree-container .file-tree-item[data-is-open="true"] > ul {
+.file-tree-container .file-tree-item[data-is-open="true"]>ul {
     display: block;
     /* top: 100%; */
 }
@@ -41,6 +41,7 @@
     cursor: pointer;
     white-space: nowrap;
 }
+
 /* 列表項目樣式 */
 .file-tree-container .file-tree-item .tight-space {
     margin-bottom: 12px;
@@ -65,13 +66,13 @@
 
 /* 資料夾圖示 - 關閉 (特定設定) */
 .file-tree-container .file-tree-item[data-is-folder]:not([data-is-open="true"])::before {
-    background-image: url("folder_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48.png");
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>');
     top: 50%;
 }
 
 /* 資料夾圖示 - 開啟 (特定設定) */
 .file-tree-container .file-tree-item[data-is-open="true"]::before {
-    background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
     top: 5%;
 }
 
@@ -86,9 +87,11 @@
     height: 100%;
     background-color: #c3c3c3;
 }
+
 .file-tree-container .file-tree-item:not([data-is-folder="true"])::after {
     display: none;
 }
+
 /* 統一設定線條容器 */
 .line-container {
     position: relative;
@@ -99,10 +102,13 @@
     content: '';
     position: absolute;
     left: -2rem;
-    top: 50%; /* 置中起點 */
-    transform: translateY(-50%); /* 向上偏移自身一半，達成絕對置中 */
+    top: 50%;
+    /* 置中起點 */
+    transform: translateY(-50%);
+    /* 向上偏移自身一半，達成絕對置中 */
     width: 3px;
-    height: 12px; /* 固定高度 */
+    height: 24px;
+    /* 豎的長度是橫的兩倍 */
     background-color: #c3c3c3;
 }
 
@@ -110,20 +116,26 @@
 .line-container::before {
     content: '';
     position: absolute;
-    left: -2rem; /* 與垂直線左側對齊 */
+    left: -2rem;
+    /* 與垂直線左側對齊 */
     top: 50%;
-    transform: translateY(-50%); /* 確保水平線自身厚度也垂直置中 */
-    width: 12px; /* 長度與垂直線高度相同 */
+    transform: translateY(-50%);
+    /* 確保水平線自身厚度也垂直置中 */
+    width: 12px;
+    /* 橫的長度 */
     height: 3px;
     background-color: #c3c3c3;
 }
 
 /* 針對最後一個項目的垂直線處理 */
-/* 如果是最後一個項目，通常垂直線只需要上半段 */
-ul li:last-child > .line-container::after {
-    height: 12px; /* 高度減半 */
-    top: calc(6px); /* 向上移動，使其底部剛好碰到水平線中心 */
+/* 如果是最後一個項目，垂直線只需要上半段 */
+ul li:last-child>.line-container::after {
+    height: 12px;
+    top: 50%;
+    transform: translateY(-100%);
+    /* 向上平移 100% 高度，使其底部剛好與水平線中心重合 */
 }
+
 /* 
 .line-container-last::after {
     content: '';
@@ -165,6 +177,6 @@ ul li:last-child >.line-container::before {
 } 
 */
 .file-tree-container .file-tree-item:not([data-is-folder])::before {
-    background-image: url('home_1000dp_FFFFFF.png');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>');
     top: 50%;
 }

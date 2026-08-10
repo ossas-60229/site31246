@@ -19,14 +19,15 @@
 }
 
 /* 巢狀列表，用來隱藏未開啟的資料夾內容 */
-.file-tree-container .file-tree-item[data-is-folder="true"] > ul {
+.file-tree-container .file-tree-item[data-is-folder="true"]>ul {
     display: none;
 }
 
 /* 開啟的資料夾，顯示其內容 */
-.file-tree-container .file-tree-item[data-is-open="true"] > ul {
+.file-tree-container .file-tree-item[data-is-open="true"]>ul {
     display: block;
-    margin-top: 10px; /* 增加上邊距 */
+    margin-top: 10px;
+    /* 增加上邊距 */
 }
 
 /* 列表項目樣式 */
@@ -34,7 +35,8 @@
     position: relative;
     padding-left: 20px;
     line-height: 1.5;
-    margin-bottom: 5px; /* 項目之間的間距 */
+    margin-bottom: 5px;
+    /* 項目之間的間距 */
     font-size: 14px;
     cursor: pointer;
     white-space: nowrap;
@@ -62,12 +64,12 @@
 
 /* 資料夾圖示 - 關閉 */
 .file-tree-container .file-tree-item[data-is-folder]:not([data-is-open="true"])::before {
-    background-image: url("folder_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48.png");
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>');
 }
 
 /* 資料夾圖示 - 開啟 */
 .file-tree-container .file-tree-item[data-is-open="true"]::before {
-    background-image: url('folder_open_1000dp_FFFFFF_FILL1_wght500_GRAD0_opsz48_改.png');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
 }
 
 /* 垂直線 */
@@ -83,7 +85,7 @@
 }
 
 /* 每個項目前面的水平線 */
-.file-tree-container .file-tree-item > ul > li::before {
+.file-tree-container .file-tree-item>ul>li::before {
     content: '';
     position: absolute;
     left: 8px;

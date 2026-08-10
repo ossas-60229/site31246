@@ -36,41 +36,48 @@ document.addEventListener("DOMContentLoaded", () => {
         // Set the initial active tab
         setActiveTab(activeIndex);
     }
-    // Initialize the tabs
-    initializeTabs(tabsContainer);
-});
-document.addEventListener('scroll', function () {
-    document.body.classList.remove('hide-scrollbar');
-    clearTimeout(window.scrollTimeout);
-    window.scrollTimeout = setTimeout(function () {
-        document.body.classList.add('hide-scrollbar');
-    }, 1000); // Adjust the timeout as needed
-});
-window.addEventListener('scroll', function () {
-    var navbar = document.getElementById('navbar');
-    console.log(window.scrollY);
-    if (window.scrollY > 300) { // 你可以調整這個數值
-        navbar.classList.add('visible');
-        console.log('visible');
-    } else {
-        navbar.classList.remove('visible');
+    // Initialize the tabs if the element exists
+    if (tabsContainer) {
+        initializeTabs(tabsContainer);
     }
 });
+
+let scrollTimeout;
+document.addEventListener('scroll', function () {
+    document.body.classList.remove('hide-scrollbar');
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function () {
+        document.body.classList.add('hide-scrollbar');
+    }, 1000);
+});
+
+let ticking = false;
+window.addEventListener('scroll', function () {
+    if (!ticking) {
+        window.requestAnimationFrame(function () {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                if (window.scrollY > 300) {
+                    navbar.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                }
+            }
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
-    var cardTexts = document.querySelectorAll(".card-text.overview");
-    var maxLength = 90; // 設定最大字數
-    var minLength = 70;
+    const cardTexts = document.querySelectorAll(".card-text.overview");
+    const maxLength = 90; // Set maximum character count
 
     cardTexts.forEach(function (cardText) {
-        var originalText = cardText.innerText;
+        const originalText = cardText.innerText;
         if (originalText.length > maxLength) {
-            // for (var i = minLength; i < maxLength; ++i) {
-            //     var truncatedText = originalText.substring(0, maxLength) + "……";
-            //     cardText.innerText = truncatedText;
-            // }
-            var truncatedText = originalText.substring(0, maxLength) + "……";
+            const truncatedText = originalText.substring(0, maxLength) + "……";
             cardText.innerText = truncatedText;
-            // cardText.setAttribute("title", originalText); // 將完整文字設置為標題屬性，方便用戶查看
         }
     });
 });
